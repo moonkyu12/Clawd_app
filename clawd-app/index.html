@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clawd Desktop Pet - Claude Code Mascot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+  <div class="app-header">
+    <div class="header-left">
+      <div class="badge-icon">> <</div>
+      <div>
+        <div class="app-title">Clawd Desktop Pet</div>
+        <div class="app-subtitle" id="levelTitle">Level 1 - Prompt Apprentice</div>
+      </div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-group">
+        <span class="stat-label">Fetched</span>
+        <span class="stat-val" id="statFetches">0</span>
+      </div>
+      <div class="stat-group">
+        <span class="stat-label">Written LOC</span>
+        <span class="stat-val" id="statLoc">0</span>
+      </div>
+      <div class="stat-group">
+        <span class="stat-label">Snacks</span>
+        <span class="stat-val" id="statSnacks">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar-row">
+    <div class="bar-item">
+      <span>Happiness</span>
+      <div class="progress-bg">
+        <div class="progress-fill fill-happiness" id="barHappiness" style="width: 90%;"></div>
+      </div>
+      <span id="txtHappiness">90%</span>
+    </div>
+    <div class="bar-item">
+      <span>Energy</span>
+      <div class="progress-bg">
+        <div class="progress-fill fill-energy" id="barEnergy" style="width: 85%;"></div>
+      </div>
+      <span id="txtEnergy">85%</span>
+    </div>
+    <div class="bar-item" style="flex: 0.6; justify-content: flex-end;">
+      <span>State:</span>
+      <span class="fill-state" id="txtState">IDLE</span>
+    </div>
+  </div>
+
+  <div class="stage-wrapper" id="stageWrapper">
+    <div class="room-shelf">
+      <div>[CLI] [GIT] [AI]</div>
+      <div class="room-shelf-line"></div>
+    </div>
+    <div class="room-clock" id="roomClock">[00:00:00]</div>
+    <div class="room-floor"></div>
+
+    <canvas id="canvasLayer" width="940" height="480"></canvas>
+
+    <div class="character-wrapper" id="characterWrapper">
+      <div class="svg-container" id="svgContainer"></div>
+    </div>
+
+    <div class="bubble-overlay" id="speechBubble">Hello! I am Clawd! > <</div>
+  </div>
+
+  <div class="event-bar">
+    <span class="event-tag">[EVENT]</span>
+    <span class="event-text" id="eventLog">Clawd is standing by. Throw a ball or click him to play!</span>
+  </div>
+
+  <div class="actions-toolbar">
+    <button class="btn btn-primary" id="btnPet" title="Pet Clawd (Space/Click)">
+      <span>Pet Clawd</span>
+      <span class="key-hint">SPACE</span>
+    </button>
+    <button class="btn" id="btnBall" title="Throw a ball for fetch (B)">
+      <span>Throw Ball</span>
+      <span class="key-hint">B</span>
+    </button>
+    <button class="btn" id="btnCode" title="Start Coding on Laptop (C)">
+      <span>Start Coding</span>
+      <span class="key-hint">C</span>
+    </button>
+    <button class="btn" id="btnSleep" title="Take a Nap (S)">
+      <span>Sleep / Nap</span>
+      <span class="key-hint">S</span>
+    </button>
+    <button class="btn" id="btnFeed" title="Feed a Delicious Snack (F)">
+      <span>Feed Snack</span>
+      <span class="key-hint">F</span>
+    </button>
+    <button class="btn" id="btnSound" title="Toggle Sound Effects (M)">
+      <span id="soundStatusTxt">Sound: ON</span>
+      <span class="key-hint">M</span>
+    </button>
+  </div>
+
+  <div class="footer-hints">
+    Click on Clawd to pet him, or click on the floor to throw a ball! Clawd will watch it in the air and catch it on the ground!
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
